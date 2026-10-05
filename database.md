@@ -6,16 +6,27 @@ Per la consegna, potete inserire la vostra tabella in un file markdown come vi h
 
 
 
+## Tabella `cars`
+
 COL | TYPE | ATTRIBUTE
 --- | --- | ---
-id | BIGINT | PRIMARY_KEY | AUTO_INCREMENT
-Marca | VARCHAR | NOTNULL
-Modello | VARCHAR | NOTNULL
-Prezzo | INT | NOTNULL
-km | INT | NOTNULL
-Cambio | CHAR(1) | NOTNULL DEFAULT('m')
-Stato | CHAR(1) | NULL
-Anni | SMALL | NOTNULL
-Alimentazione | VARCHAR | NOTNULL
-Colore | VARCHAR | NOTNULL
-Porte | TINYINT | NOTNULL DEFAULT('3')
+id | BIGINT UNSIGNED | PRIMARY KEY AUTO_INCREMENT
+targa | VARCHAR(10) | NOT NULL UNIQUE
+marca | VARCHAR(50) | NOT NULL
+modello | VARCHAR(50) | NOT NULL
+prezzo | DECIMAL(9,2) | NOT NULL
+km | INT UNSIGNED | NOT NULL DEFAULT 0
+cambio | CHAR(1) | NOT NULL DEFAULT 'm'
+stato | VARCHAR(20) | NULL
+anno_immatricolazione | SMALLINT UNSIGNED | NOT NULL
+alimentazione | VARCHAR(20) | NOT NULL
+cilindrata | SMALLINT UNSIGNED | NULL
+colore | VARCHAR(30) | NOT NULL
+porte | TINYINT UNSIGNED | NOT NULL DEFAULT 5
+descrizione | TEXT | NULL
+venduta | TINYINT(1) | NOT NULL DEFAULT 0
+
+Note:
+- `cambio`: 'm' = manuale, 'a' = automatico
+- `stato`: condizioni dell'auto (es. ottimo, buono, da revisionare)
+- `alimentazione`: benzina, diesel, gpl, metano, ibrida, elettrica
